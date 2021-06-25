@@ -278,31 +278,32 @@ relx_plugin_apps(ReleaseType) ->
     [ emqx_retainer
     , emqx_management
     , emqx_dashboard
-    , emqx_bridge_mqtt
-    , emqx_sn
-    , emqx_coap
-    , emqx_stomp
+%%    , emqx_bridge_mqtt
+    , emqx_bridge_kafka
+%%    , emqx_sn
+%%    , emqx_coap
+%%    , emqx_stomp
     , emqx_auth_http
-    , emqx_auth_mysql
+%%    , emqx_auth_mysql
     , emqx_auth_jwt
-    , emqx_auth_mnesia
+%%    , emqx_auth_mnesia
     , emqx_web_hook
     , emqx_recon
     , emqx_rule_engine
-    , emqx_sasl
+%%    , emqx_sasl
     ]
-    ++ [emqx_telemetry || not is_enterprise()]
+%%    ++ [emqx_telemetry || not is_enterprise()]
     ++ relx_plugin_apps_per_rel(ReleaseType)
     ++ relx_plugin_apps_enterprise(is_enterprise())
     ++ relx_plugin_apps_extra().
 
 relx_plugin_apps_per_rel(cloud) ->
-    [ emqx_lwm2m
-    , emqx_auth_ldap
-    , emqx_auth_pgsql
-    , emqx_auth_redis
-    , emqx_auth_mongo
-    , emqx_lua_hook
+    [ emqx_lua_hook
+%%        emqx_lwm2m
+%%    , emqx_auth_ldap
+%%    , emqx_auth_pgsql
+%%    , emqx_auth_redis
+%%    , emqx_auth_mongo
     , emqx_exhook
     , emqx_exproto
     , emqx_prometheus
